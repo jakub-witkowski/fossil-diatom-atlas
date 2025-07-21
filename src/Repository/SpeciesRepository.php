@@ -16,6 +16,14 @@ class SpeciesRepository extends ServiceEntityRepository
         parent::__construct($registry, Species::class);
     }
 
+    public function getNumberOfGenera(): int
+    {
+        return $this->createQueryBuilder('t')
+            ->select('COUNT(DISTINCT t.genusNameForSpecies)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
     //    /**
     //     * @return Species[] Returns an array of Species objects
     //     */

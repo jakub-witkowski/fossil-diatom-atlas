@@ -6,11 +6,11 @@
     <div class="bg-white bg-opacity-75 p-4 w-fit rounded-md font-medium text-center mx-6 border border-gray-700">
         <span><i>The story of 100+ million years of diatom evolution told through:</i></span>
     </div>
-    
+
     <div class="bg-white bg-opacity-75 p-4 w-fit rounded-md font-medium text-center mx-6 border border-gray-700">
         <span><i><strong> {{ photos }} photos</strong> of fossil diatoms </i></span>
     </div>
-    
+
     <div class="bg-white bg-opacity-75 p-4 w-fit rounded-md font-medium text-center mx-6 border border-gray-700">
         <span><i><strong> {{ species }} species</strong>, both extinct and living</i></span>
     </div>
@@ -48,14 +48,14 @@
         </div>
 
         {% for update in updates %}
-        
-        <div class="py-2">    
+
+        <div class="py-2">
             <span><strong> {{ update.getDatePublished|date("d M Y") }}:<br/> </strong></span>
             <span class="ml-[1.5rem]"> {{ update.getContent|raw }} </span>
         </div>
-        
+
         {% endfor %}
-        
+
         <div class="pr-2 pb-2 text-right">
             <a class="text-md md:text-lg" href={{ url('app_updates') }}><i><strong>See all updates</strong></i></a>
         </div>

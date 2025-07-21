@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Genus;
 use App\Entity\Photo;
 use App\Entity\Species;
+use App\Entity\Taxon;
 use App\Entity\Update;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,8 +20,8 @@ class AtlasHomepageController extends AbstractController
         $speciesRepository = $em->getRepository(Species::class);
         $species = $speciesRepository->count();
 
-        $generaRepository = $em->getRepository(Genus::class);
-        $genera = $generaRepository->count();
+        $generaRepository = $em->getRepository(Species::class);
+        $genera = $generaRepository->getNumberOfGenera();
 
         $photoRepository = $em->getRepository(Photo::class);
         $photos = $photoRepository->count();
