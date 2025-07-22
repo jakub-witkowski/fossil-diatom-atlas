@@ -13,3 +13,13 @@
 .idea/
 .idea/*.*
 ###< IDE files ###
+
+###> assets ###
+/assets/
+/assets/*.*
+###< assets ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###

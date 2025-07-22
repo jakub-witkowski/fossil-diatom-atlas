@@ -21,7 +21,7 @@ class EntryController extends AbstractController
     #[Route('/entry/{id<\d+>}', name: 'app_entry', methods: 'GET')]
     public function index(int $id, PhotoRepository $repository, EntityManagerInterface $em): Response
     {
-        $photo = $repository->findPhotoById($id);
+        $photo = $repository->findOneBy(['id' => $id]);
 
         if (!$photo) {
             throw $this->createNotFoundException('Photo not found');

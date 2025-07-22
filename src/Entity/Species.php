@@ -70,12 +70,20 @@ class Species extends Taxon
     {
         $taxonInfo =
             $this->getGenusNameForSpecies() . ' ' .
-            $this->getSpeciesName() . ' ' .
+            $this->getSpeciesName()
+        ;
+
+        return $taxonInfo;
+    }
+
+    public function printTaxonAuthorityAndDate(): string
+    {
+        $taxonAuthorityAndDate =
             $this->getSpeciesAuthority() . ' (' .
             $this->getSpeciesPublicationDate() . ')'
         ;
 
-        return $taxonInfo;
+        return $taxonAuthorityAndDate;
     }
 
     public function getSpeciesPublicationDate(): ?int

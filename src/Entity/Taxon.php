@@ -61,9 +61,18 @@ class Taxon
         return $this;
     }
 
+    public function printTaxonAuthorityAndDate(): string
+    {
+        return $this;
+    }
+
     public function __toString(): string
     {
-        return $this->printTaxonInfo();
+        $taxonInfo =
+            $this->printTaxonInfo() . ' ' .
+            $this->printTaxonAuthorityAndDate();
+
+        return $taxonInfo;
     }
 
     /**
